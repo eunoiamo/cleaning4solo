@@ -387,6 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const form2 = document.getElementById('addWasteForm');
     const showModalButton = document.getElementById('showModalButton');
     const submitSelesaiButton = document.getElementById('submitSelesai');
+    console.log(submitSelesaiButton);
     const modal = $('#submitActivityModal');
     const activitySelect2 = document.querySelector('#activitySelect2');
     const errorMessage = document.querySelector('#submitActivityErrorMessage');
