@@ -1,6 +1,6 @@
 import Swal from 'sweetalert2';
 import { getUserIDFromToken } from './decodeUserID';
-import { showSuccessAlert, showErrorAlert } from './allertMessage';
+import { showErrorAlert } from './allertMessage';
 
 const token = sessionStorage.getItem('token');
 
@@ -383,7 +383,6 @@ function checkIfTableIsEmpty() {
     `;
   }
 }
-
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
     console.log('DOM fully loaded and parsed');
@@ -462,8 +461,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       console.error('Element with id "submitSelesai" not found.');
     }
-  }, 100); // Adjust the delay time as needed
+  }, 1000); // Adjust the delay time as needed
 });
+
 
 // Function to update activity status
 async function updateActivityStatus(activityId, statusAktivitas) {
@@ -512,13 +512,7 @@ async function appendActivityToTable(activityId) {
   const activityTableBody = document.getElementById('activity-table');
   const newRow = document.createElement('tr');
 
-  const formattedTotalJual = activity.totalJual
-    ? `Rp ${parseFloat(activity.totalJual).toLocaleString('id-ID')}`
-    : 'Rp0';
 
-  const formattedTotalEmisiKarbon = activity.totalEmisiKarbon
-    ? `${parseFloat(activity.totalEmisiKarbon).toLocaleString('id-ID')} kg CO₂`
-    : '0 kg CO₂';
 
   newRow.innerHTML = `
     <td class="text-center p-2">${activity.aktivitas}</td>
