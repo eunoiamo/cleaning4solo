@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/loader.css" />
+    <script src="https://cdn.tiny.cloud/1/jclmt89nztmnrjvf9doexlrcwsyy4wsz7u25wbiluneie6jd/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    <title>Admin Panel</title>
+  </head>
+<body>
+  <div id="preloader"></div>
+  <section id="sidebar">
+    <a href="/" class="brand">
+      <img src="/img/logo.svg" alt="logo" class="img-log">
+      <span class="text">Cleaning4Solo</span>
+    </a>
+    <ul class="side-menu top">
+      <li class="active">
+        <a href="#/dashboard">
+          <i class='bx bxs-dashboard'></i>
+          <span class="text">Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/blogs">
+          <i class='bx bx-news'></i>
+          <span class="text">Blogs</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/gallery">
+          <i class='bx bx-images'></i>
+          <span class="text">Gallery</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/event">
+          <i class='bx bx-calendar event-icon'></i>
+          <span class="text">Events</span>
+        </a>
+      </li>
+      <li>
+        <a href="#/trash">
+          <i class='bx bx-trash'></i>
+          <span class="text">Data Sampah</span>
+        </a>
+      </li>
+    </ul>
+  </section>
+    <section id="content">
+      <nav>
+        <i class='bx bxs-chevron-left sidebar-controller'></i>
+        <form action="#">
+        </form>
+        <input type="checkbox" id="switch-mode" hidden />
+        <label for="switch-mode" class="switch-mode"></label>
+          <button onclick="logout()" class="btn btn-danger rounded-pill py-2 mx-5 px-5">
+            <i class='bx bxs-log-out-circle'></i>
+            <span class="text">Logout</span>
+          </button>
+      </nav>
+      <main class="main-content" id="main-content"></main>
+    </section>
+  </body>
+</html>
