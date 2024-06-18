@@ -65,7 +65,6 @@ const Login = {
         updateLoginSection();
         showSuccessAlert(data.message);
         setTimeout(() => {
-          console.log(data.data.role);
           if (data.data.role === 'master') {
             window.location.href = '/admin.html';
           } else {

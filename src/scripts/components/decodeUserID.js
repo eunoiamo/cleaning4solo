@@ -4,7 +4,6 @@ import { jwtDecode } from 'jwt-decode';
 function getUserIDFromToken() {
   const token = sessionStorage.getItem('token');
   if (!token) {
-    console.log('No token found in sessionStorage.');
     return null;
   }
 
@@ -20,7 +19,6 @@ function getUserIDFromToken() {
 function getUserRoleFromToken() {
   const token = sessionStorage.getItem('token');
   if (!token) {
-    console.log('No token found in sessionStorage.');
     return null;
   }
 
