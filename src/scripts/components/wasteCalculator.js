@@ -33,6 +33,7 @@ async function addActivity(aktivitas, totalJual, totalEmisiKarbon) {
     }
 
     const data = await response.json();
+    console.log('Activity added to server:', data);
     document.dispatchEvent(new CustomEvent('activityAdded', { detail: { success: true, data } }));
 
     // Show success notification
@@ -86,6 +87,7 @@ async function addWasteToActivity(activityId, jenis, berat, asalLimbah, harga, e
       }),
     });
     const data = await response.json();
+    console.log('Waste added to server:', data);
     document.dispatchEvent(new CustomEvent('wasteAdded', { detail: data }));
 
     // Show success notification
@@ -353,6 +355,7 @@ async function deleteWasteById(wasteId) {
     }
 
     const result = await response.json();
+    console.log('Waste deleted successfully:', result);
     // Refresh the table or remove the row
     document.dispatchEvent(new CustomEvent('wasteDeleted', { detail: wasteId }));
     return true;
@@ -475,6 +478,7 @@ async function updateActivityStatus(activityId, statusAktivitas) {
     }
 
     const data = await response.json();
+    console.log('Activity status updated:', data);
     return true;
   } catch (error) {
     console.error('Error updating activity status:', error);
@@ -715,10 +719,13 @@ function loadAndDisplayActivities() {
 
   fetchAllActivities()
     .then((activities) => {
+      console.log('Fetched activities:', activities); // Debugging line to check the structure of fetched activities
       const successfulActivities = filterSuccessfulActivities(activities, userId);
+      console.log('Filtered successful activities:', successfulActivities); // Debugging line to check the filtered activities
 
       // Sort activities in descending order
       const sortedActivities = sortActivitiesDescending(successfulActivities);
+      console.log('Sorted activities:', sortedActivities); // Debugging line to check the sorted activities
 
       displayActivitiesInTable(sortedActivities);
     })
