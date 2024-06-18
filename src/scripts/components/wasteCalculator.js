@@ -383,17 +383,19 @@ function checkIfTableIsEmpty() {
 
 document.addEventListener('DOMContentLoaded', () => {
   setTimeout(() => {
+    console.log('DOM fully loaded and parsed');
     const form = document.getElementById('submitActivityForm');
     const form2 = document.getElementById('addWasteForm');
     const showModalButton = document.getElementById('showModalButton');
     const submitSelesaiButton = document.getElementById('submitSelesai');
-    console.log(submitSelesaiButton);
     const modal = $('#submitActivityModal');
     const activitySelect2 = document.querySelector('#activitySelect2');
     const errorMessage = document.querySelector('#submitActivityErrorMessage');
 
     if (submitSelesaiButton) {
+      console.log('submitSelesaiButton found');
       submitSelesaiButton.addEventListener('click', async () => {
+        console.log('submitSelesaiButton clicked');
         modal.modal('show');
 
         modal.on('shown.bs.modal', () => {
